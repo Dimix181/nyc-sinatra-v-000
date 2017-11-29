@@ -3,25 +3,32 @@
 <form class="" action="/figures/new" method="post">
 
 <ul>
+<!-- figure Name field -->
   <li> <label for="">Figure's Name</label> </li>
-       <input type="text" name="figure[name]" value="">
+       <input type="text" name="figure[name]" id="figure_name" value="">
+<br><br>
 
-  <li> <label for="">Figure's Title</label> </li>
-       <input type="text" name="figure[title_ids[]" value="">
+<!-- title name -->
+  <li> <label for="">Choose a Title</label> </li>
+         <% Title.all.each do |title| %>
+        <input type="radio" name="figure[title_ids][]" value="<%=title.id%>" id=" ">
+        <%= title.name %>
+        <% end %>
 
-  <li> <label for="">Figure's Name</label> </li>
-        <input type="text" name="figure[landmark_ids][]" value="">
+<br>
+  <li> <label for="">Or create a New Title</label> </li>
+        <input type="text" name="title[name]" value="" >
+<br><br>
+
+<!-- landmark -->
+  <li> <label for="">Choose a Landmark</label> </li>
+    <% Landmark.all.each do |landmark|  %>
+      <input type="radio" name="figure[landmark_ids][]" value="<%=landmark.id  %>"> <%= landmark.name %>
+      <% end %>
+  <li> <label for="">Or create a New Landmark</label> </li>
+      <input type="text" name="landmark[name]" value="">
+
 </ul>
 
-<ul>
-  <li> <label for="">Landmark</label> </li>
-       <input type="text" name="landmark[name]" value="">
-</ul>
-
-<ul>
-  <li> <label for="">Title</label> </li>
-       <input type="text" name="title[name]" value="">
-</ul>
-
-<input type="submit" name="create" value="create">
+<input type="submit" name="submit button" value="Create New Figure">
 </form>
