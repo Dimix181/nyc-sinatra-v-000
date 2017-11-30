@@ -6,7 +6,9 @@ class FiguresController < ApplicationController
   end
 
   post '/figures/new' do
-    binding.pry
+    figure = Figure.new(name: params[:figure][:name])
+    figure.titles << Title.find(params[:figure][:title_ids].first.to_i)
+    figure.save
   end
 
 end

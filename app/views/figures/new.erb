@@ -10,20 +10,19 @@
 
 <!-- title name -->
   <li> <label for="">Choose a Title</label> </li>
-         <% Title.all.each do |title| %>
-        <input type="radio" name="figure[title_ids][]" value="<%=title.id%>" id=" ">
+        <% Title.all.each do |title| %>
+        <input type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" id="title_<%=title.id%>">
         <%= title.name %>
         <% end %>
-
 <br>
   <li> <label for="">Or create a New Title</label> </li>
-        <input type="text" name="title[name]" value="" >
+        <input type="text" name="title[name]" value="" id= >
 <br><br>
 
 <!-- landmark -->
   <li> <label for="">Choose a Landmark</label> </li>
     <% Landmark.all.each do |landmark|  %>
-      <input type="radio" name="figure[landmark_ids][]" value="<%=landmark.id  %>"> <%= landmark.name %>
+      <input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>"> <%= landmark.name %>
       <% end %>
   <li> <label for="">Or create a New Landmark</label> </li>
       <input type="text" name="landmark[name]" value="">
