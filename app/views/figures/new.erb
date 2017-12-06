@@ -16,16 +16,18 @@
         <% end %>
 <br>
   <li> <label for="">Or create a New Title</label> </li>
-        <input type="text" name="title[name]" value="" id= >
+        <input type="text" name="title[name]" value="" id="new_title" >
 <br><br>
 
 <!-- landmark -->
   <li> <label for="">Choose a Landmark</label> </li>
     <% Landmark.all.each do |landmark|  %>
-      <input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>"> <%= landmark.name %>
+
+      <input type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" id="landmark_<%=landmark.id %>">
+      <%= landmark.name %>
       <% end %>
   <li> <label for="">Or create a New Landmark</label> </li>
-      <input type="text" name="landmark[name]" value="">
+      <input type="text" name="landmark[name]" value="" id="new_landmark">
 
 </ul>
 

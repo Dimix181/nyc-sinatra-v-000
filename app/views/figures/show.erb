@@ -1,0 +1,17 @@
+
+<h2> <%=@figure.name %> </h2>
+
+<h3>Titles</h3>
+<% @figure.titles do |obj| %>
+<ol> <%= obj.name %> </ol>
+<% end %>
+
+<h3>Landmarks</h3>
+<% @figure.landmarks.each do |obj| %>
+<h4>Landmark Name:</h4>
+<%= obj.name %>
+<h4>Year Completed:</h4>
+<%= obj.year_completed%>
+<% end %>
+
+<a href="/figures/<%=@figure.slug%>/edit">Edit</a>

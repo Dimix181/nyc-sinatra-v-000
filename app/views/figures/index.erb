@@ -1,0 +1,6 @@
+
+<h1>Popular Figures</h1>
+
+<ul>
+ <%@figures.each{|obj|%> <li> <a href="/figures/<%=obj.slug%>"><%=obj.name%> </a>  </li> <% } %>
+</ul>
